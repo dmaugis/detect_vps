@@ -34,7 +34,7 @@ angles = atan2(centered_vp(2,:), centered_vp(1,:));
 %% estimate vertical VPs by sinus of angle wrt central point
 vertical_angle_scores = abs(sin(angles));
 vertical_distance_scores = abs(centered_vp(2,:));
-vertical_vps_idx = find((vertical_angle_scores > sin(params.VERTICAL_ANGLE_THRESHOLD/180*pi)) && (vertical_distance_scores > H));
+vertical_vps_idx = find((vertical_angle_scores > sin(params.VERTICAL_ANGLE_THRESHOLD/180*pi)) & (vertical_distance_scores > H));
 
 vertical_vps = mvp_all(:,vertical_vps_idx);
 if isempty(vertical_vps);

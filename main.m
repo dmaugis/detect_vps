@@ -31,18 +31,19 @@ pkg load statistics
 clear
 close all
 
-img_in =  'test.jpg'; % input image
+%img_in =  'test.jpg'; % input image
+img_in =  argv(){1}
 
 
 folder_out = '.'; % output folder
 
-manhattan = 0;
+manhattan = 1;
 acceleration = 0;
 
 focal_ratio = 1.08;
 
-params.PRINT = 0;
-params.PLOT = 0;
+params.PRINT = 1;
+params.PLOT = 1;
 
 horizon = detect_vps(img_in, folder_out, manhattan, acceleration, focal_ratio, params);
 
