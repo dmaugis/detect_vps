@@ -157,7 +157,7 @@ for i=1:length(z)
     b = lt(2)-a*lt(1);
     ang=atan(a);
     
-    if abs(ang*180/pi)>45 | isnan(ang)
+    if abs(ang*180/pi)>45 || isnan(ang)
         % inverse stuff
         
         Y=[1:H];
@@ -173,7 +173,7 @@ for i=1:length(z)
         X = round(X(z0)+mod(lt(1),S));
         Y = round(X*a+b);
     end
-    z1 = find(Y>=1 & Y<=H & X>=1 & X<=W);
+    z1 = find(Y>=1 && Y<=H && X>=1 && X<=W);
     
     z2 = sub2ind([H W], Y(z1),X(z1));
     zi2{I(z(i))}(z2)=1;

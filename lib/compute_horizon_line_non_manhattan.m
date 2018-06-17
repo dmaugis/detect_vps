@@ -34,7 +34,7 @@ angles = atan2(centered_vp(2,:), centered_vp(1,:));
 %% estimate vertical VPs by sinus of angle wrt central point
 vertical_angle_scores = abs(sin(angles));
 vertical_distance_scores = abs(centered_vp(2,:));
-vertical_vps_idx = find((vertical_angle_scores > sin(params.VERTICAL_ANGLE_THRESHOLD/180*pi)) & (vertical_distance_scores > H));
+vertical_vps_idx = find((vertical_angle_scores > sin(params.VERTICAL_ANGLE_THRESHOLD/180*pi)) && (vertical_distance_scores > H));
 
 vertical_vps = mvp_all(:,vertical_vps_idx);
 if isempty(vertical_vps);
@@ -233,14 +233,14 @@ if params.PRINT
             xx = round(X(i));
             yy = round(Y(i)+j);
             
-            if yy>11 & yy<=H & xx>=1 & xx <=W
+            if yy>11 && yy<=H && xx>=1 && xx <=W
                 img(yy,xx,:)=col;
                 
             end
         end
     end
     
-    if ~isdeployed & params.PLOT
+    if ~isdeployed && params.PLOT
         figure, imagesc(img);
     end
     

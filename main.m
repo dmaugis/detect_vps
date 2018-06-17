@@ -32,7 +32,7 @@ img_in =  'test.jpg'; % input image
 
 folder_out = '.'; % output folder
 
-manhattan = 1;
+manhattan = 0;
 acceleration = 0;
 
 focal_ratio = 1.08;
@@ -41,3 +41,4 @@ params.PRINT = 1;
 params.PLOT = 1;
 
 horizon = detect_vps(img_in, folder_out, manhattan, acceleration, focal_ratio, params);
+

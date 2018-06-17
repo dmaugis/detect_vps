@@ -1,4 +1,4 @@
-function [u, v] = PCLines_twisted(l);
+function [u, v] = PCLines_twisted_all(l);
 % Transforms line in [x1 y1 x2 y2] description with PCLines straight
 % transform. Coordinates should be normalized.
 % see http://medusa.fit.vutbr.cz/public/data/papers/2011-CVPR-Dubska-PClines.pdf

@@ -1,7 +1,7 @@
 function [mvp_all, NFAs] = read_detections_as_vps(detections_straight, m1, b1,detections_twisted, m2, b2, params);
 % converts alignment detections to vanishing points in the image
 
-if isempty(detections_straight) & isempty(detections_twisted)
+if isempty(detections_straight) && isempty(detections_twisted)
     mvp_all = [];
     NFAs = [];
     return;
@@ -54,7 +54,7 @@ NFAs = [NFAs1; NFAs2];
 
 
 % remove nan (infinity vp)                                                                                                                                                           
-z = find(isnan(mvp_all(1,:)) | isinf(mvp_all(1,:)));
+z = find(isnan(mvp_all(1,:)) || isinf(mvp_all(1,:)));
 mvp_all(:,z)=[];
 NFAs(z) = [];
 

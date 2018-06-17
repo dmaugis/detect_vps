@@ -497,7 +497,7 @@ void mexFunction(int nlhs, mxArray *plhs[],
   /* IMPORTANT: all_alignments are ordered backwards */
   /* create the list */
 
-  printf("applying exclusion principle on resulting %d alingments...\n", all_alignments->pos);
+  printf("applying exclusion principle on resulting %d alignments...\n", all_alignments->pos);
   timer = time(NULL);
 
   alignments_list *f1v1_alignments = (alignments_list*)calloc(sizeof(alignments_list), 1);
