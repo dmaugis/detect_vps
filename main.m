@@ -22,6 +22,10 @@
 % 
 % You should have received a copy of the GNU Affero General Public License
 % along with this program. If not, see <http://www.gnu.org/licenses/>.
+all_warnings = 0;
+if ~all_warnings 
+  warning('off', 'Octave:GraphicsMagic-Quantum-Depth');
+end
 pkg load image
 pkg load statistics
 clear
@@ -37,8 +41,8 @@ acceleration = 0;
 
 focal_ratio = 1.08;
 
-params.PRINT = 1;
-params.PLOT = 1;
+params.PRINT = 0;
+params.PLOT = 0;
 
 horizon = detect_vps(img_in, folder_out, manhattan, acceleration, focal_ratio, params);
 
