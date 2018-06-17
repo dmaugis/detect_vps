@@ -153,7 +153,6 @@ for i=1:length(z)
     end
     
     % draw dashed lines
-    #a = ((lt(4)-lt(2)))/(lt(3)-lt(1));
     a = ((lt(4)-lt(2)))/(lt(3)-lt(1));
     b = lt(2)-a*lt(1);
     ang=atan(a);

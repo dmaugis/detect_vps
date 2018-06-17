@@ -25,6 +25,8 @@
 all_warnings = 0;
 if ~all_warnings 
   warning('off', 'Octave:GraphicsMagic-Quantum-Depth');
+  warning('off', 'Octave:divide-by-zero');
+  warning('off', 'Octave:possible-matlab-short-circuit-operator');
 end
 pkg load image
 pkg load statistics
