@@ -1,8 +1,18 @@
 # lazy makefile
-all:
-	mex -v  -I/usr/include lsd.c
-	mex -v  CFLAGS='-D_GNU_SOURCE -fexceptions -fno-omit-frame-pointer -pthread -ansi -fPIC -fopenmp' LDFLAGS='-pthread -shared -fopenmp' -I/usr/include -Ilib lib/alignments.c lib/ntuple.c  lib/misc.c lib/ntuples_aux.c  lib/nfa.c  alignments_slow.c -output alignments_slow
+#all:
+#	mex -v  -I/usr/include lsd.c
+#	mex -v  CFLAGS='-D_GNU_SOURCE -fexceptions -fno-omit-frame-pointer -pthread -ansi -fPIC -fopenmp' LDFLAGS='-pthread -shared -fopenmp' -I/usr/include -Ilib lib/alignments.c lib/ntuple.c  lib/misc.c lib/ntuples_aux.c  lib/nfa.c  alignments_slow.c -output alignments_slow
+#
+#	mex -v  CFLAGS='-D_GNU_SOURCE -fexceptions -fno-omit-frame-pointer -pthread  -fPIC -fopenmp' LDFLAGS='-pthread -shared -fopenmp' -I/usr/include -Ilib lib/alignments.c lib/ntuple.c   lib/misc.c lib/ntuples_aux.c  lib/nfa.c  alignments_fast.c -output alignments_fast
 
-	mex -v  CFLAGS='-D_GNU_SOURCE -fexceptions -fno-omit-frame-pointer -pthread  -fPIC -fopenmp' LDFLAGS='-pthread -shared -fopenmp' -I/usr/include -Ilib lib/alignments.c lib/ntuple.c   lib/misc.c lib/ntuples_aux.c  lib/nfa.c  alignments_fast.c -output alignments_fast
+mex=mkoctfile --mex
+
+all:
+	$(mex) -v  -I/usr/include lsd.c
+	$(mex) -v  -D_GNU_SOURCE -fexceptions -fno-omit-frame-pointer -pthread -ansi -fPIC -fopenmp -pthread -shared -fopenmp -I/usr/include -Ilib lib/alignments.c lib/ntuple.c  lib/misc.c lib/ntuples_aux.c  lib/nfa.c  alignments_slow.c -output alignments_slow
+
+	$(mex) -v  -D_GNU_SOURCE -fexceptions -fno-omit-frame-pointer -pthread  -fPIC -fopenmp -pthread -shared -fopenmp -I/usr/include -Ilib lib/alignments.c lib/ntuple.c   lib/misc.c lib/ntuples_aux.c  lib/nfa.c  alignments_fast.c -output alignments_fast
+
+
 
 

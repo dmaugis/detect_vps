@@ -46,7 +46,7 @@ end
 
 
 % make lines fatter
-se = strel('disk',1);
+se = strel('disk',1,0);
 blue=logical(imdilate(blue,se));
 red=logical(imdilate(red,se));
 

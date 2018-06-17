@@ -1,3 +1,4 @@
+#!/usr/bin/octave -q
 % Vanishing Points detection algorithm.
 % IPOL SUBMISSION "Vanishing Point Detection in Urban Scenes Using Point Alignments"
 % 
@@ -21,7 +22,8 @@
 % 
 % You should have received a copy of the GNU Affero General Public License
 % along with this program. If not, see <http://www.gnu.org/licenses/>.
-
+pkg load image
+pkg load statistics
 clear
 close all
 

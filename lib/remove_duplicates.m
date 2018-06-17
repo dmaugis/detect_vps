@@ -1,4 +1,4 @@
-function [final_vps, final_NFAs] = remove_duplicates3(vps, NFAs, params)
+function [final_vps, final_NFAs] = remove_duplicates(vps, NFAs, params)
 % Identifies and removes duplicate detections, keeping only most
 % significant ones.
 %

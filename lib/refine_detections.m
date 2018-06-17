@@ -1,4 +1,4 @@
-function mvp_all = refine_detections3(mvp_all, lines_lsd, params);
+function mvp_all = refine_detections(mvp_all, lines_lsd, params);
 % Refines VP detections using lines from LSD
 %
 % Version 0.6, July 2015

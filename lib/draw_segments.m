@@ -196,7 +196,7 @@ blue = img(:,:,3);
 
 
 % make lines fatter
-se = strel('disk',1);
+se = strel('disk',1,0);
 for i=1:V
     zi{i}=logical(imdilate(zi{i},se));
     red(zi{i})= colors(i,1)*255;
